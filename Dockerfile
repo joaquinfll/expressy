@@ -1,9 +1,9 @@
 # First stage builds the application
 FROM registry.access.redhat.com/ubi8/nodejs-14 as builder
 # Add application sources
-ADD src/app.js .
-ADD src/modules .
-ADD src/package*.json .
+ADD src/app.js $HOME/app.js
+ADD src/modules $HOME/modules
+ADD src/package.json $HOME/package.json
 # Install the dependencies
 RUN npm install
 # Second stage copies the application to the minimal image
